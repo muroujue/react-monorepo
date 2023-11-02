@@ -37,15 +37,3 @@
 
 - `yarn build-all` 打包所有项目的静态文件
 - `yarn clean` 删除所有的 node_modules
-
-### 1、React Table 复选框问题
-
-> 目前项目中用的是 React table v7 版本,组件支持复选框，但是不支持对某行 disabled,解决方法参考：https://github.com/TanStack/table/issues/2988。 或者升级 React table V8 版本，该版本已经包含有该功能
-
-## 微前端动态远程加载模块
-
-> 1、在 pivat_sidecar 项目中封装组件,并在项目中 webpack.base.js 中导出该模块 ( 使用 export default 导出模块 )
-
-> 2、在 pivat_platform 中的页面内引入动态导入组件(路径：pivat_platform/src/remote),该组件有三个必传属性，其他属性会作为参数带入远程组件内。
-
-> 3、添加中英文翻译的方法：引入 Intl.tsx 组件(路径： pivat_sidecar/src/helper)，对该封装的组件外部包装一层，其中 lang 属性为必传属性
