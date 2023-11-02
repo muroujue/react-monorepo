@@ -1,0 +1,7 @@
+{
+  "packages": ["common", "platform", "sidecar"],
+  "version": "independent",
+  "useNx": true,
+  "npmClient": "yarn",
+  "useWorkspaces": true
+}

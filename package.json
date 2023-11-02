@@ -1,0 +1,35 @@
+{
+  "name": "react-monorepo",
+  "version": "1.0.0",
+  "description": "Add micro frontend architecture",
+  "license": "ISC",
+  "private": true,
+  "workspaces": [
+    "common",
+    "platform",
+    "sidecar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "dev-all": "npx lerna run dev --stream --parallel",
+    "dev-platform": "npx lerna run dev --stream --scope=platform --scope=@mcomponents/common",
+    "dev-sidecar": "npx lerna run dev --stream --scope=sidecar --scope=@mcomponents/common",
+    "build-all": "npx lerna run build",
+    "clean-dist": "rimraf ./**/dist",
+    "clean": "rimraf node_modules && rimraf ./**/node_modules && rimraf ./**/dist"
+  },
+  "devDependencies": {
+    "lerna": "^5.1.6",
+    "nx": "^14.3.4",
+    "rimraf": "3.0.2"
+  },
+  "resolutions": {
+    "@yarnpkg/parsers": "3.0.0-rc.48.1"
+  },
+  "engines": {
+    "node": ">=14.17.0"
+  }
+}
